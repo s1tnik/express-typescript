@@ -1,8 +1,11 @@
 import express from "express";
+import * as dotenv from "dotenv";
 import { analyzeController } from "./controllers/analyzeController";
 
+dotenv.config();
+
 const app = express();
-const port = 5072;
+const port = process.env.PORT ?? 5072;
 
 app.use(express.json());
 
