@@ -2,7 +2,7 @@
 FROM node:14-alpine
 
 # Set the working directory to /app
-WORKDIR /app
+WORKDIR .
 
 # Copy package.json and package-lock.json to the container
 COPY package*.json ./
@@ -17,4 +17,5 @@ COPY . .
 EXPOSE 5072
 
 # Run the command to start the app
-CMD [ "npm", "run", "build", "&&", "npm", "run", "start" ]
+RUN npm run build
+CMD ["npm", "start"]
