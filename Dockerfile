@@ -17,5 +17,4 @@ COPY . .
 EXPOSE 5072
 
 # Run the command to start the app
-CMD [ "npm", "build" ]
-CMD [ "npm", "start" ]
+CMD [ "npm", "run", "build", "&&", "npm", "run", "start" ]
